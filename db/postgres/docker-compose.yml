@@ -1,0 +1,30 @@
+services:
+  postgres:
+    container_name: postgres_db
+    build:
+      context: ./docker
+    restart: unless-stopped
+    volumes:
+        - ./data:/var/lib/postgresql/data
+        - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    env_file:
+      - ./.env
+    environment:
+        # - POSTGRES_USER=postgres
+        # - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=default_db
+        - MAX_CONNECTIONS=100
+    networks:
+        - proxy-net
+    ports:
+        - 5432:5432
+    healthcheck:
+        test: [ "CMD-SHELL", "pg_isready -U postgres -d default_db" ]
+        interval: 10s
+        timeout: 5s
+        retries: 5
+
+networks:
+  proxy-net:
+    external: true
+
