@@ -1,0 +1,23 @@
+services:
+  adguardhome:
+    image: adguard/adguardhome
+    container_name: adguardhome
+    restart: unless-stopped
+    volumes:
+      - ./workdir:/opt/adguardhome/work
+      - ./confdir:/opt/adguardhome/conf
+    networks:
+      - proxy-net
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8080:80/tcp"
+      - "3000:3000/tcp" # Setup wizard port
+      - "445:443/tcp"
+    # Optional: If you want to use AdGuard as a DHCP server, add:
+    # - "67:67/udp"
+    #
+
+networks:
+  proxy-net:
+    external: true
