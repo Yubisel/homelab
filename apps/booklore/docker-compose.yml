@@ -31,7 +31,7 @@ services:
       timeout: 10s
     restart: unless-stopped
 
-  mariadb:
+  booklore_mariadb:
     image: lscr.io/linuxserver/mariadb:11.4.5
     container_name: booklore_mariadb
     env_file:
