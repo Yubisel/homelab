@@ -1,0 +1,29 @@
+# Environment and secrets (keep .env.example / .env.sample)
+.env
+.env.local
+.env.*.local
+
+# Data and runtime directories (per-stack volumes)
+**/data/
+**/workdir/
+**/confdir/
+**/letsencrypt/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE and project local
+.idea/
+.vscode/
+*.sublime-*
+
+# Logs and temp
+*.log
+*.tmp
+*.temp
+*.bak
+*.cache
