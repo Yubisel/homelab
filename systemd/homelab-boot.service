@@ -1,0 +1,26 @@
+[Unit]
+Description=Start homelab Docker Compose stacks on boot
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+# Set this to the path where your homelab repo lives (e.g. /home/yubisel/homelab)
+Environment="LAB_ROOT=/home/yubisel/homelab"
+
+# Ensure proxy network exists
+ExecStartPre=/bin/sh -c 'docker network inspect proxy-net >/dev/null 2>&1 || docker network create proxy-net'
+
+# Start each stack (order can matter if stacks depend on each other)
+ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/db/postgres/docker-compose.yml up -d
+ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/db/mongodb/docker-compose.yml up -d
+ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/core/portainer/docker-compose.yml up -d
+ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/core/npm/docker-compose.yml up -d
+ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/core/adguard/docker-compose.yml up -d
+ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/core/dockge/docker-compose.yml up -d
+ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/apps/linkding/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
