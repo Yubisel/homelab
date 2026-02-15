@@ -23,6 +23,7 @@ services:
       - ./bookdrop:/bookdrop
     networks:
       - proxy-net
+      - booklore-net
     healthcheck:
       test: wget -q -O - http://localhost:6060/api/v1/healthcheck
       interval: 60s
@@ -52,7 +53,11 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    networks:
+      - booklore-net
 
 networks:
   proxy-net:
     external: true
+  booklore-net:
+    driver: bridge
