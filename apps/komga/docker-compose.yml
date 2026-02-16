@@ -1,0 +1,21 @@
+services:
+  komga:
+    image: gotson/komga:latest
+    container_name: komga
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
+    env_file:
+      - .env
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    ports:
+      - "25600:25600"
+    networks:
+      - proxy-net
+    restart: unless-stopped
+
+networks:
+  proxy-net:
+    external: true
