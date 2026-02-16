@@ -5,7 +5,7 @@ Self-hosted apps that run on `proxy-net` and can be exposed via Nginx Proxy Mana
 | Stack    | Description              | Port / UI |
 |----------|--------------------------|-----------|
 | linkding | Linkding — bookmark manager | 9090    |
-| calibre  | Calibre — ebook manager | 8083    |
+| booklore | Booklore — book library manager | 6060    |
 
 **Usage:** From a stack folder (e.g. `apps/linkding`), copy `.env.sample` to `.env`, set variables if needed, then run `docker compose up -d`.
-**Usage:** From a stack folder (e.g. `apps/calibre`), copy `.env.sample` to `.env`, set variables if needed, then run `docker compose up -d`.
+**Usage:** From a stack folder (e.g. `apps/booklore`), copy `.env.sample` to `.env`, set variables if needed, then run `docker compose up -d`.

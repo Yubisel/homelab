@@ -21,6 +21,7 @@ ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/core/npm/docker-compose.yml up 
 ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/core/adguard/docker-compose.yml up -d
 ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/core/dockge/docker-compose.yml up -d
 ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/apps/linkding/docker-compose.yml up -d
+ExecStart=/usr/bin/docker compose -f ${LAB_ROOT}/apps/booklore/docker-compose.yml up -d
 
 [Install]
 WantedBy=multi-user.target
