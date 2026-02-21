@@ -1,4 +1,4 @@
-FROM postgres:16.4-alpine
+FROM postgres:17-alpine
 
 # Copy custom configuration
 COPY postgresql.conf /etc/postgresql.conf
