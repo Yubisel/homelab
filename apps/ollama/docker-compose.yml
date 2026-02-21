@@ -1,0 +1,14 @@
+services:
+  chatgpt:
+    image: ghcr.io/ivanfioravanti/chatbot-ollama:main
+    ports:
+      - 3015:3000
+    environment:
+      - DEFAULT_MODEL=llama3.1
+      - OLLAMA_HOST=http://ollama:11434
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ./data/models:/ollama/models
+    environment:
+      - OLLAMA_MODELS=/ollama/models
