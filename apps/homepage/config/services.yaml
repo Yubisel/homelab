@@ -1,0 +1,119 @@
+---
+# Homelab services - all Docker stacks
+# Update href to your NPM/proxy URLs (e.g. https://portainer.home) if you use reverse proxy.
+# Container names must match exactly; adjust if you use different compose project names.
+
+- Core:
+    - Homepage:
+        icon: homepage.png
+        href: http://homepage.home
+        description: This dashboard
+        server: homelab
+        container: homepage
+    - Portainer:
+        icon: portainer.png
+        href: http://portainer.home
+        description: Docker container management
+        server: homelab
+        container: portainer
+    - Dockge:
+        icon: dockge.png
+        href: http://dockge.home
+        description: Compose stack manager
+        server: homelab
+        container: dockge
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager.png
+        href: http://npm.home
+        description: Reverse proxy and SSL
+        server: homelab
+        container: nginx-proxy-manager
+    - AdGuard Home:
+        icon: adguard-home.png
+        href: http://adguard.home
+        description: DNS and ad blocking
+        server: homelab
+        container: adguardhome
+    - Cockpit:
+        icon: cockpit.png
+        href: https://192.168.1.50:9099
+        description: Ubuntu server management
+
+- Media & Books:
+    - Komga:
+        icon: komga.png
+        href: http://komga.home
+        description: Comics and manga server
+        server: homelab
+        container: komga
+        # Optional widget - set username/password or key in Booklore/Komga and uncomment:
+        # widget:
+        #   type: komga
+        #   url: http://localhost:25600
+        #   username: youruser
+        #   password: yourpass
+    - Booklore:
+        icon: booklore.png
+        href: http://booklore.home
+        description: Book library and reading
+        server: homelab
+        container: booklore
+        # Optional widget - uncomment and set credentials:
+        # widget:
+        #   type: booklore
+        #   url: http://localhost:6060
+        #   username: youruser
+        #   password: yourpass
+
+- AI & Tools:
+    - Ollama ChatGPT UI:
+        icon: ollama.png
+        href: http://ollama.home
+        description: Chat UI for Ollama models
+        server: homelab
+        # If status doesn't show, run: docker ps --format '{{.Names}}' and set container name
+        container: ollama-chatgpt-1
+    - Linkding:
+        icon: linkding.png
+        href: http://linkding.home
+        description: Bookmark manager
+        server: homelab
+        container: linkding
+    - whoDB:
+        icon: whodb.png
+        href: http://whodb.home
+        description: Database browser and explorer
+        server: homelab
+        container: whodb
+    - BentoPDF:
+        icon: bentopdf.png
+        href: http://bentopdf.home
+        description: PDF conversion and generation
+        server: homelab
+        container: bentopdf
+
+- Databases:
+    - PostgreSQL:
+        icon: postgresql.png
+        # href: http://postgres.home
+        description: PostgreSQL (no web UI; link to pgAdmin or similar if needed)
+        server: homelab
+        container: postgres_db
+    - MySQL:
+        icon: mysql.png
+        # href: http://mysql.home
+        description: MySQL (no web UI; link to whoDB or similar if needed)
+        server: homelab
+        container: mysql_db
+    - Redis:
+        icon: redis.png
+        # href: no web UI
+        description: Redis cache and message broker
+        server: homelab
+        container: redis_db
+    - MongoDB:
+        icon: mongodb.png
+        # href: http://mongo.home
+        description: MongoDB (no web UI; link to Mongo Express or similar if needed)
+        server: homelab
+        container: mongo_db

@@ -1,0 +1,14 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/docker/
+
+# my-docker:
+#   host: 127.0.0.1
+#   port: 2375
+
+# my-docker:
+#   socket: /var/run/docker.sock
+
+# Homelab Docker - used for container status in services
+homelab:
+  socket: /var/run/docker.sock
