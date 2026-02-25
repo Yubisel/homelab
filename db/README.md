@@ -5,6 +5,7 @@ Database services for the homelab. All use the shared `proxy-net` network so oth
 | Stack    | Description                    | Port(s) |
 |----------|--------------------------------|---------|
 | postgres | PostgreSQL (custom image, init SQL) | 5432    |
+| mysql    | MySQL 8 (custom image, init SQL)    | 3306    |
 | mongodb  | MongoDB 7.0                    | 27017   |
 
 **Usage:** From a stack folder (e.g. `db/postgres`), run `docker compose up -d`. Copy `.env.example` to `.env` and set credentials where required (e.g. Postgres).
