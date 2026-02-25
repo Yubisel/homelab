@@ -1,0 +1,15 @@
+# IT-Tools: https://github.com/CorentinTh/it-tools
+# Handy online tools for developers (converters, encoders, formatters, etc.)
+services:
+  it-tools:
+    image: ghcr.io/corentinth/it-tools:latest
+    container_name: it-tools
+    ports:
+      - "8280:80"
+    networks:
+      - proxy-net
+    restart: unless-stopped
+
+networks:
+  proxy-net:
+    external: true

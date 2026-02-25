@@ -91,6 +91,12 @@
         description: PDF conversion and generation
         server: homelab
         container: bentopdf
+    - IT-Tools:
+        icon: it-tools.png
+        href: http://it-tools.home
+        description: Handy dev tools (converters, encoders, formatters)
+        server: homelab
+        container: it-tools
 
 - Databases:
     - PostgreSQL:
