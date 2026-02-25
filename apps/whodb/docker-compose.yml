@@ -1,0 +1,16 @@
+services:
+  whoDB:
+    container_name: whodb
+    image: clidey/whodb
+    ports:
+      - "8089:8080"
+    # environment:
+    networks:
+      - proxy-net
+
+    restart: unless-stopped
+
+
+networks:
+  proxy-net:
+    external: true
