@@ -22,6 +22,12 @@
         description: Compose stack manager
         server: homelab
         container: dockge
+    - Dozzle:
+        icon: dozzle.png
+        href: http://dozzle.home
+        description: Realtime Docker container logs
+        server: homelab
+        container: dozzle
     - Nginx Proxy Manager:
         icon: nginx-proxy-manager.png
         href: http://npm.home

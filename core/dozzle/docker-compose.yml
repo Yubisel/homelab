@@ -1,0 +1,17 @@
+# Dozzle: https://github.com/amir20/dozzle
+# Realtime log viewer for Docker containers
+services:
+  dozzle:
+    container_name: dozzle
+    image: amir20/dozzle:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8380:8080"
+    networks:
+      - proxy-net
+    restart: unless-stopped
+
+networks:
+  proxy-net:
+    external: true
