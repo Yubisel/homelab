@@ -1,0 +1,26 @@
+services:
+  redis:
+    container_name: redis_db
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - ./data:/data
+      - ./docker/redis.conf:/data/redis.conf:ro
+    env_file:
+      - ./.env
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    command: ["sh", "-c", "redis-server /data/redis.conf --requirepass \"$$REDIS_PASSWORD\""]
+    networks:
+      - proxy-net
+    ports:
+      - 6379:6379
+    healthcheck:
+      test: [ "CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" ping | grep -q PONG || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  proxy-net:
+    external: true
