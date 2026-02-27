@@ -103,6 +103,12 @@
         description: Handy dev tools (converters, encoders, formatters)
         server: homelab
         container: it-tools
+    - n8n:
+        icon: n8n.png
+        href: http://n8n.home
+        description: Workflow automation
+        server: homelab
+        container: n8n
 
 - Databases:
     - PostgreSQL:

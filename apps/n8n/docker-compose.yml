@@ -1,0 +1,28 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    user: "1000:1000"
+    ports:
+      - "5678:5678"
+    env_file:
+      - .env
+    volumes:
+      # - n8n_data:/home/node/.n8n
+      - ./local_files:/files
+    networks:
+      - proxy-net
+    healthcheck:
+      test: wget -q -O - http://n8n.home/healthz
+      interval: 60s
+      retries: 5
+      start_period: 60s
+      timeout: 10s
+    restart: unless-stopped
+
+# volumes:
+#   n8n_data:
+
+networks:
+  proxy-net:
+    external: true
