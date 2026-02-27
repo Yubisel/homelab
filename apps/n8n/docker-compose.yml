@@ -13,10 +13,10 @@ services:
     networks:
       - proxy-net
     healthcheck:
-      test: wget -q -O - http://n8n.home/healthz
-      interval: 60s
-      retries: 5
-      start_period: 60s
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:5678/healthz || exit 1"]
+      interval: 30s
+      retries: 3
+      start_period: 30s
       timeout: 10s
     restart: unless-stopped
 
