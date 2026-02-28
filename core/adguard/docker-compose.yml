@@ -13,7 +13,7 @@ services:
       - "53:53/udp"
       - "8080:80/tcp"
       - "3000:3000/tcp" # Setup wizard port
-      - "445:443/tcp"
+      - "446:443/tcp"
     # Optional: If you want to use AdGuard as a DHCP server, add:
     # - "67:67/udp"
     #

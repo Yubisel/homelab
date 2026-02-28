@@ -28,6 +28,12 @@
         description: Realtime Docker container logs
         server: homelab
         container: dozzle
+    - Portracker:
+        icon: portracker.png
+        href: http://portracker.home
+        description: Port and service tracker
+        server: homelab
+        container: portracker
     - Nginx Proxy Manager:
         icon: nginx-proxy-manager.png
         href: http://npm.home
@@ -44,6 +50,14 @@
         icon: cockpit.png
         href: https://192.168.1.50:9099
         description: Ubuntu server management
+
+    - Disco Extra:
+        icon: protondrive
+        href: smb://homelab.home/SSDHomelab
+        widget:
+          type: disk
+          endpoint: /mnt/data
+
 
 - Media & Books:
     - Komga:

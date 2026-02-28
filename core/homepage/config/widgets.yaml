@@ -3,13 +3,19 @@
 # https://gethomepage.dev/configs/info-widgets/
 
 - resources:
+    label: System
     cpu: true
     cputemp: true
     memory: true
-    disk: /
     network: true
-    # uptime: true
+    uptime: true
     weather: true
+
+- resources:
+    label: Storage
+    disk:
+      - /
+      - /mnt/data
 
 - search:
     provider: duckduckgo

@@ -7,6 +7,7 @@ services:
     volumes:
       - ./config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
+      - /mnt/data:/mnt/data:ro
     environment:
       HOMEPAGE_ALLOWED_HOSTS: homepage.home,192.168.1.50:3005 # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
     restart: unless-stopped

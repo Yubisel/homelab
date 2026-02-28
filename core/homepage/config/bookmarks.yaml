@@ -1,18 +1,106 @@
 ---
-# For configuration options and examples, please see:
+# For configuration options and examples, see:
 # https://gethomepage.dev/configs/bookmarks
 
 - Developer:
-    - Github:
+    - GitHub:
         - abbr: GH
           href: https://github.com/
+    - GitLab:
+        - abbr: GL
+          href: https://gitlab.com/
+    - Stack Overflow:
+        - abbr: SO
+          href: https://stackoverflow.com/
+    - MDN Web Docs:
+        - abbr: MD
+          href: https://developer.mozilla.org/
+    - Docker Hub:
+        - abbr: DH
+          href: https://hub.docker.com/
+    - npm:
+        - abbr: np
+          href: https://www.npmjs.com/
+
+- Search & Reference:
+    - Google:
+        - abbr: GG
+          href: https://www.google.com/
+    - DuckDuckGo:
+        - abbr: DD
+          href: https://duckduckgo.com/
+    - Wikipedia:
+        - abbr: WP
+          href: https://www.wikipedia.org/
 
 - Social:
     - Reddit:
         - abbr: RE
-          href: https://reddit.com/
+          href: https://www.reddit.com/
+    - Twitter/X:
+        - abbr: X
+          href: https://x.com/
+    - LinkedIn:
+        - abbr: IN
+          href: https://www.linkedin.com/
+    - Mastodon:
+        - abbr: MA
+          href: https://mastodon.social/
 
 - Entertainment:
     - YouTube:
         - abbr: YT
-          href: https://youtube.com/
+          href: https://www.youtube.com/
+    - Netflix:
+        - abbr: NF
+          href: https://www.netflix.com/
+    - Spotify:
+        - abbr: SP
+          href: https://open.spotify.com/
+    - Twitch:
+        - abbr: TW
+          href: https://www.twitch.tv/
+    - IMDb:
+        - abbr: IM
+          href: https://www.imdb.com/
+
+- Communication:
+    - Gmail:
+        - abbr: GM
+          href: https://mail.google.com/
+    - Outlook:
+        - abbr: OL
+          href: https://outlook.live.com/
+    - Discord:
+        - abbr: DC
+          href: https://discord.com/app/
+
+- Productivity & Cloud:
+    - Google Drive:
+        - abbr: GD
+          href: https://drive.google.com/
+    - Notion:
+        - abbr: NO
+          href: https://www.notion.so/
+    - Trello:
+        - abbr: TR
+          href: https://trello.com/
+
+- Tech News & Reading:
+    - Hacker News:
+        - abbr: HN
+          href: https://news.ycombinator.com/
+    - Ars Technica:
+        - abbr: AR
+          href: https://arstechnica.com/
+    - The Verge:
+        - abbr: VG
+          href: https://www.theverge.com/
+
+- Shopping & Services:
+    - Amazon:
+        - abbr: AM
+          href: https://www.amazon.com/
+    - eBay:
+        - abbr: EB
+          href: https://www.ebay.com/
