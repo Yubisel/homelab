@@ -22,30 +22,51 @@
         - abbr: np
           href: https://www.npmjs.com/
 
-- Search & Reference:
+- Google:
     - Google:
         - abbr: GG
           href: https://www.google.com/
-    - DuckDuckGo:
-        - abbr: DD
-          href: https://duckduckgo.com/
-    - Wikipedia:
-        - abbr: WP
-          href: https://www.wikipedia.org/
+    - Mail:
+        - abbr: GM
+          href: https://mail.google.com/
+    - Translate:
+        - abbr: TR
+          href: https://translate.google.com/
+    - Gemini:
+        - abbr: GM
+          href: https://gemini.google.com/
+    - Drive:
+        - abbr: GD
+          href: https://drive.google.com/
+    - Calendar:
+        - abbr: CA
+          href: https://calendar.google.com/
+    - Contacts:
+        - abbr: CT
+          href: https://contacts.google.com/
+    - Youtube:
+        - abbr: YT
+          href: https://www.youtube.com/
 
 - Social:
+    - LinkedIn:
+        - abbr: IN
+          href: https://www.linkedin.com/
+    - Facebook:
+        - abbr: FB
+          href: https://www.facebook.com/
+    - Instagram:
+        - abbr: IG
+          href: https://www.instagram.com/
+    - WhatsApp:
+        - abbr: WA
+          href: https://web.whatsapp.com/
     - Reddit:
         - abbr: RE
           href: https://www.reddit.com/
     - Twitter/X:
         - abbr: X
           href: https://x.com/
-    - LinkedIn:
-        - abbr: IN
-          href: https://www.linkedin.com/
-    - Mastodon:
-        - abbr: MA
-          href: https://mastodon.social/
 
 - Entertainment:
     - YouTube:
@@ -86,21 +107,37 @@
         - abbr: TR
           href: https://trello.com/
 
-- Tech News & Reading:
-    - Hacker News:
-        - abbr: HN
-          href: https://news.ycombinator.com/
-    - Ars Technica:
-        - abbr: AR
-          href: https://arstechnica.com/
-    - The Verge:
-        - abbr: VG
-          href: https://www.theverge.com/
+- Anime:
+    - AnimeFLV:
+        - abbr: AF
+          href: https://www3.animeflv.net/
+    - Crunchyroll:
+        - abbr: CR
+          href: https://www.crunchyroll.com/
+
+- Comics:
+    - Apoll Comics:
+        - abbr: AP
+          href: https://apollcomics.xyz/
+    - Ver Man Hwa:
+        - abbr: VM
+          href: https://vermanhwa.com/
 
 - Shopping & Services:
+    - Mercado Libre:
+        - abbr: ML
+          href: https://www.mercadolibre.com.uy/
     - Amazon:
         - abbr: AM
           href: https://www.amazon.com/
     - eBay:
         - abbr: EB
           href: https://www.ebay.com/
+
+- Banking:
+    - Itaú:
+        - abbr: IT
+          href: https://www.itau.com.uy/
+    - Scotiabank:
+        - abbr: SC
+          href: https://www.scotiabank.com.uy/

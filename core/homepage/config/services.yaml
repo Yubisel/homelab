@@ -52,12 +52,9 @@
         description: Ubuntu server management
 
     - Disco Extra:
-        icon: protondrive
+        icon: mdi-harddisk
         href: smb://homelab.home/SSDHomelab
-        widget:
-          type: disk
-          endpoint: /mnt/data
-
+        description: SMB share (SSDHomelab)
 
 - Media & Books:
     - Komga:
