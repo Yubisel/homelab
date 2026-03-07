@@ -4,140 +4,184 @@
 
 - Developer:
     - GitHub:
-        - abbr: GH
+        - icon: /icons/github.png
+          abbr: GH
           href: https://github.com/
     - GitLab:
-        - abbr: GL
+        - icon: /icons/gitlab.png
+          abbr: GL
           href: https://gitlab.com/
     - Stack Overflow:
-        - abbr: SO
+        - icon: /icons/stackoverflow.png
+          abbr: SO
           href: https://stackoverflow.com/
     - MDN Web Docs:
-        - abbr: MD
+        - icon: /icons/mdn.png
+          abbr: MD
           href: https://developer.mozilla.org/
     - Docker Hub:
-        - abbr: DH
+        - icon: /icons/dockerhub.png
+          abbr: DH
           href: https://hub.docker.com/
     - npm:
-        - abbr: np
+        - icon: /icons/npm.png
+          abbr: np
           href: https://www.npmjs.com/
 
 - Google:
     - Google:
-        - abbr: GG
+        - icon: /icons/google.png
+          abbr: GG
           href: https://www.google.com/
     - Mail:
-        - abbr: GM
+        - icon: mdi-email
+          abbr: GM
           href: https://mail.google.com/
     - Translate:
-        - abbr: TR
+        - icon: /icons/translate.png
+          abbr: TR
           href: https://translate.google.com/
     - Gemini:
-        - abbr: GM
+        - icon: /icons/gemini.png
+          abbr: GM
           href: https://gemini.google.com/
     - Drive:
-        - abbr: GD
+        - icon: /icons/googledrive.png
+          abbr: GD
           href: https://drive.google.com/
     - Calendar:
-        - abbr: CA
+        - icon: mdi-calendar
+          abbr: CA
           href: https://calendar.google.com/
     - Contacts:
-        - abbr: CT
+        - icon: mdi-account-group
+          abbr: CT
           href: https://contacts.google.com/
     - Youtube:
-        - abbr: YT
+        - icon: /icons/youtube.png
+          abbr: YT
           href: https://www.youtube.com/
 
 - Social:
     - LinkedIn:
-        - abbr: IN
+        - icon: /icons/linkedin.png
+          abbr: IN
           href: https://www.linkedin.com/
     - Facebook:
-        - abbr: FB
+        - icon: /icons/facebook.png
+          abbr: FB
           href: https://www.facebook.com/
     - Instagram:
-        - abbr: IG
+        - icon: /icons/instagram.png
+          abbr: IG
           href: https://www.instagram.com/
     - WhatsApp:
-        - abbr: WA
+        - icon: /icons/whatsapp.png
+          abbr: WA
           href: https://web.whatsapp.com/
     - Reddit:
-        - abbr: RE
+        - icon: /icons/reddit.png
+          abbr: RE
           href: https://www.reddit.com/
     - Twitter/X:
-        - abbr: X
+        - icon: /icons/x.png
+          abbr: X
           href: https://x.com/
 
 - Entertainment:
     - YouTube:
-        - abbr: YT
+        - icon: /icons/youtube.png
+          abbr: YT
           href: https://www.youtube.com/
     - Netflix:
-        - abbr: NF
+        - icon: /icons/netflix.png
+          abbr: NF
           href: https://www.netflix.com/
     - Spotify:
-        - abbr: SP
+        - icon: /icons/spotify.png
+          abbr: SP
           href: https://open.spotify.com/
     - Twitch:
-        - abbr: TW
+        - icon: /icons/twitch.png
+          abbr: TW
           href: https://www.twitch.tv/
     - IMDb:
-        - abbr: IM
+        - icon: /icons/imdb.png
+          abbr: IM
           href: https://www.imdb.com/
 
 - Communication:
     - Gmail:
-        - abbr: GM
+        - icon: mdi-email
+          abbr: GM
           href: https://mail.google.com/
     - Outlook:
-        - abbr: OL
+        - icon: /icons/outlook.png
+          abbr: OL
           href: https://outlook.live.com/
     - Discord:
-        - abbr: DC
+        - icon: /icons/discord.png
+          abbr: DC
           href: https://discord.com/app/
 
 - Productivity & Cloud:
     - Google Drive:
-        - abbr: GD
+        - icon: mdi-google-drive
+          abbr: GD
           href: https://drive.google.com/
     - Notion:
-        - abbr: NO
+        - icon: /icons/notion.png
+          abbr: NO
           href: https://www.notion.so/
     - Trello:
-        - abbr: TR
+        - icon: /icons/trello.png
+          abbr: TR
           href: https://trello.com/
 
 - Anime:
     - AnimeFLV:
-        - abbr: AF
+        - icon: /icons/animeflv.png
+          abbr: AF
           href: https://www3.animeflv.net/
     - Crunchyroll:
-        - abbr: CR
+        - icon: /icons/crunchyroll.png
+          abbr: CR
           href: https://www.crunchyroll.com/
 
 - Comics:
     - Apoll Comics:
-        - abbr: AP
+        - icon: /icons/apollcomics.png
+          abbr: AP
           href: https://apollcomics.xyz/
-    - Ver Man Hwa:
-        - abbr: VM
+    - Ver Manhwa:
+        - icon: /icons/vermanhwa.png
+          abbr: VM
           href: https://vermanhwa.com/
+    - M440:
+        - icon: /icons/m440.png
+          abbr: M4
+          href: https://m440.in/
 
 - Shopping & Services:
     - Mercado Libre:
-        - abbr: ML
+        - icon: /icons/mercadolibre.png
+          abbr: ML
           href: https://www.mercadolibre.com.uy/
     - Amazon:
-        - abbr: AM
+        - icon: /icons/amazon.png
+          abbr: AM
           href: https://www.amazon.com/
     - eBay:
-        - abbr: EB
+        - icon: /icons/ebay.png
+          abbr: EB
           href: https://www.ebay.com/
 
 - Banking:
     - Itaú:
-        - abbr: IT
+        - icon: /icons/itau.png
+          abbr: IT
           href: https://www.itau.com.uy/
     - Scotiabank:
-        - abbr: SC
+        - icon: /icons/scotiabank.png
+          abbr: SC
           href: https://www.scotiabank.com.uy/
