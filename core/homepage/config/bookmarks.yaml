@@ -143,6 +143,10 @@
         - icon: /icons/animeflv.png
           abbr: AF
           href: https://www3.animeflv.net/
+    - jkanime:
+        - icon: /icons/jkanime.png
+          abbr: JK
+          href: https://jkanime.net/
     - Crunchyroll:
         - icon: /icons/crunchyroll.png
           abbr: CR

@@ -44,6 +44,7 @@ discord:discord.com
 notion:notion.so
 trello:trello.com
 animeflv:animeflv.net
+jkanime:jkanime.net
 crunchyroll:crunchyroll.com
 apollcomics:apollcomics.xyz
 vermanhwa:vermanhwa.com
