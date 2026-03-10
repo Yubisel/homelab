@@ -18,9 +18,9 @@ services:
     ports:
       - "6060:6060"
     volumes:
-      - ./data:/app/data
-      - ./books:/books
-      - ./bookdrop:/bookdrop
+      - /mnt/data/booklore/data:/app/data
+      - /mnt/data/booklore/books:/books
+      - /mnt/data/booklore/bookdrop:/bookdrop
     networks:
       - proxy-net
       - booklore-net
@@ -46,7 +46,7 @@ services:
       - MYSQL_USER=${DB_USER}
       - MYSQL_PASSWORD=${DB_PASSWORD}
     volumes:
-      - ./mariadb/config:/config
+      - /mnt/data/booklore/mariadb/config:/config
     restart: unless-stopped
     healthcheck:
       test: [ "CMD", "mariadb-admin", "ping", "-h", "localhost" ]
