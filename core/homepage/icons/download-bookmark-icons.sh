@@ -45,6 +45,7 @@ notion:notion.so
 trello:trello.com
 animeflv:animeflv.net
 jkanime:jkanime.net
+immich:immich.app
 crunchyroll:crunchyroll.com
 apollcomics:apollcomics.xyz
 vermanhwa:vermanhwa.com

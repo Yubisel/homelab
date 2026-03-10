@@ -57,6 +57,12 @@
         description: SMB share (SSDHomelab)
 
 - Media & Books:
+    - Immich:
+        icon: immich.png
+        href: http://immich.home
+        description: Self-hosted photo and video backup
+        server: homelab
+        container: immich_server
     - Komga:
         icon: komga.png
         href: http://komga.home
