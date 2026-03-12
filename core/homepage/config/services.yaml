@@ -120,12 +120,24 @@
         description: Handy dev tools (converters, encoders, formatters)
         server: homelab
         container: it-tools
+    - Hoppscotch:
+        icon: hoppscotch.png
+        href: http://hoppscotch.home
+        description: API development and testing (Postman alternative)
+        server: homelab
+        container: hoppscotch
     - n8n:
         icon: n8n.png
         href: http://n8n.home
         description: Workflow automation
         server: homelab
         container: n8n
+    - AFFiNE:
+        icon: affine.png
+        href: http://affine.home
+        description: Collaborative knowledge base and docs
+        server: homelab
+        container: affine_server
 
 - Databases:
     - PostgreSQL:
