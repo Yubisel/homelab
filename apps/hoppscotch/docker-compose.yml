@@ -1,0 +1,20 @@
+services:
+  hoppscotch:
+    image: hoppscotch/hoppscotch:latest
+    container_name: hoppscotch
+    ports:
+      # - 3018:3000
+      # - 3019:3100
+      # - 3020:3170
+      - 3021:3021
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - OPEN_SOURCE_ONLY_MODE=true
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    external: true
