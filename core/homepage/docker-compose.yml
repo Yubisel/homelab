@@ -7,6 +7,7 @@ services:
     volumes:
       - ./config:/app/config # Make sure your local config directory exists
       - ./icons:/app/public/icons # Local bookmark/service icons (use /icons/filename.png)
+      - ./images:/app/public/images # Local images
       - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
       - /mnt/data:/mnt/data:ro
     environment:

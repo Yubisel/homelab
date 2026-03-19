@@ -4,18 +4,24 @@
 # Container names must match exactly; adjust if you use different compose project names.
 
 - Core:
-    - Homepage:
-        icon: homepage.png
-        href: http://homepage.home
-        description: This dashboard
-        server: homelab
-        container: homepage
+    # - Homepage:
+    #     icon: homepage.png
+    #     href: http://homepage.home
+    #     description: This dashboard
+    #     server: homelab
+    #     container: homepage
     - Portainer:
         icon: portainer.png
         href: http://portainer.home
         description: Docker container management
         server: homelab
         container: portainer
+        widget:
+          type: portainer
+          url: http://192.168.1.50:9000
+          env: 3
+          key: ptr_WCLnKhZeJ9GSrKTMIIs8Ci2Gat/W2PKJtTSC1f7cRUY=
+          fields: ["running", "stopped", "total"]
     - Dockge:
         icon: dockge.png
         href: http://dockge.home
@@ -63,6 +69,7 @@
         description: Self-hosted photo and video backup
         server: homelab
         container: immich_server
+        showStats: true
     - Komga:
         icon: komga.png
         href: http://komga.home
@@ -126,12 +133,19 @@
         description: API development and testing (Postman alternative)
         server: homelab
         container: hoppscotch
+    - Vikunja:
+        icon: vikunja.png
+        href: http://vikunja.home
+        description: Task and to-do manager
+        server: homelab
+        container: vikunja
     - n8n:
         icon: n8n.png
         href: http://n8n.home
         description: Workflow automation
         server: homelab
         container: n8n
+        showStats: true
     - AFFiNE:
         icon: affine.png
         href: http://affine.home
@@ -146,21 +160,25 @@
         description: PostgreSQL (no web UI; link to pgAdmin or similar if needed)
         server: homelab
         container: postgres_db
+        showStats: true
     - MySQL:
         icon: mysql.png
         # href: http://mysql.home
         description: MySQL (no web UI; link to whoDB or similar if needed)
         server: homelab
         container: mysql_db
+        showStats: true
     - Redis:
         icon: redis.png
         # href: no web UI
         description: Redis cache and message broker
         server: homelab
         container: redis_db
+        showStats: true
     - MongoDB:
         icon: mongodb.png
         # href: http://mongo.home
         description: MongoDB (no web UI; link to Mongo Express or similar if needed)
         server: homelab
         container: mongo_db
+        showStats: true

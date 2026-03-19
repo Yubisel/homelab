@@ -151,6 +151,10 @@
         - icon: /icons/crunchyroll.png
           abbr: CR
           href: https://www.crunchyroll.com/
+    - Tio Anime:
+        - icon: /icons/tioanime.png
+          abbr: TA
+          href: https://tioanime.com/
 
 - Comics:
     - Apoll Comics:
