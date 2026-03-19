@@ -1,0 +1,22 @@
+services:
+  vikunja:
+    image: vikunja/vikunja:latest
+    container_name: vikunja
+    env_file:
+      - .env
+    environment:
+      VIKUNJA_SERVICE_PUBLICURL: http://${FQDN:-localhost}:3456/
+      VIKUNJA_SERVICE_JWTSECRET: 7436340a80cc7386b975bbf6fda3cbef6376094f664644f5c5f24d31d13ed52d
+      VIKUNJA_DATABASE_PATH: /db/vikunja.db
+    ports:
+      - 3456:3456
+    volumes:
+      - ./files:/app/vikunja/files
+      - ./db:/db
+    restart: unless-stopped
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    external: true
