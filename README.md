@@ -6,10 +6,11 @@ Docker-based homelab configuration: databases, core infrastructure, and self-hos
 
 ## Quick start
 
-1. **Create the shared Docker network** (one-time):
+1. **Install dependencies** (Docker + Task) and create the shared network:
    ```bash
-   ./init.sh
+   ./setup.sh
    ```
+   Supports Ubuntu/Debian, Fedora/RHEL, Alpine, and macOS.
 
 2. **Start everything** from the repo root:
    ```bash
@@ -23,8 +24,6 @@ Docker-based homelab configuration: databases, core infrastructure, and self-hos
    ```
 
 4. **Start on reboot** — see [BOOT.md](BOOT.md) to enable Docker and/or the homelab boot service.
-
-> Requires [Task](https://taskfile.dev) (`brew install go-task` / `go install github.com/go-task/task/v3/cmd/task@latest`).
 
 ## Task commands
 
@@ -109,6 +108,7 @@ task apps:immich:logs  # scoped to any depth
 ```
 homelab/
 ├── Taskfile.yml         # Root task runner (task init, task down, ...)
+├── setup.sh             # Install Docker, Task, and create proxy-net
 ├── init.sh              # Creates the shared proxy-net Docker network
 ├── BOOT.md              # How to start services on server reboot
 ├── core/                # Infrastructure: proxy, DNS, Docker UIs
