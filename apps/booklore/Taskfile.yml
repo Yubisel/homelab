@@ -1,0 +1,39 @@
+version: '3'
+
+tasks:
+  booklore:
+    desc: Start all booklore containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all booklore containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show booklore logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show booklore container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest booklore images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart booklore containers
+    cmds:
+      - docker compose restart
+
+  setup:
+    desc: Initialize directories and start booklore
+    cmds:
+      - sh init-dirs.sh
+      - task: booklore

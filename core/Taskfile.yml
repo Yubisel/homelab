@@ -1,0 +1,104 @@
+version: '3'
+
+includes:
+  homepage:
+    taskfile: ./homepage
+    dir: ./homepage
+  adguard:
+    taskfile: ./adguard
+    dir: ./adguard
+  portainer:
+    taskfile: ./portainer
+    dir: ./portainer
+  dockge:
+    taskfile: ./dockge
+    dir: ./dockge
+  portracker:
+    taskfile: ./portracker
+    dir: ./portracker
+  npm:
+    taskfile: ./npm
+    dir: ./npm
+  dozzle:
+    taskfile: ./dozzle
+    dir: ./dozzle
+
+tasks:
+  homepage:
+    desc: Start homepage containers
+    cmds:
+      - task: homepage:homepage
+
+  adguard:
+    desc: Start adguard containers
+    cmds:
+      - task: adguard:adguard
+
+  portainer:
+    desc: Start portainer containers
+    cmds:
+      - task: portainer:portainer
+
+  dockge:
+    desc: Start dockge containers
+    cmds:
+      - task: dockge:dockge
+
+  portracker:
+    desc: Start portracker containers
+    cmds:
+      - task: portracker:portracker
+
+  npm:
+    desc: Start Nginx Proxy Manager containers
+    cmds:
+      - task: npm:npm
+
+  dozzle:
+    desc: Start dozzle containers
+    cmds:
+      - task: dozzle:dozzle
+
+  up:
+    desc: Start all core containers
+    cmds:
+      - task: adguard:up
+      - task: npm:up
+      - task: portainer:up
+      - task: dockge:up
+      - task: portracker:up
+      - task: dozzle:up
+      - task: homepage:up
+
+  down:
+    desc: Stop all core containers
+    cmds:
+      - task: homepage:down
+      - task: adguard:down
+      - task: portainer:down
+      - task: dockge:down
+      - task: portracker:down
+      - task: npm:down
+      - task: dozzle:down
+
+  ps:
+    desc: Show status of all core containers
+    cmds:
+      - task: homepage:ps
+      - task: adguard:ps
+      - task: portainer:ps
+      - task: dockge:ps
+      - task: portracker:ps
+      - task: npm:ps
+      - task: dozzle:ps
+
+  pull:
+    desc: Pull latest images for all core services
+    cmds:
+      - task: homepage:pull
+      - task: adguard:pull
+      - task: portainer:pull
+      - task: dockge:pull
+      - task: portracker:pull
+      - task: npm:pull
+      - task: dozzle:pull

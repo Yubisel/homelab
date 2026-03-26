@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  whodb:
+    desc: Start all whodb containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all whodb containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show whodb logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show whodb container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest whodb images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart whodb containers
+    cmds:
+      - docker compose restart

@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  n8n:
+    desc: Start all n8n containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all n8n containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show n8n logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show n8n container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest n8n images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart n8n containers
+    cmds:
+      - docker compose restart

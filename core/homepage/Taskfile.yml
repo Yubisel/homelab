@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  homepage:
+    desc: Start all homepage containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all homepage containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show homepage logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show homepage container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest homepage images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart homepage containers
+    cmds:
+      - docker compose restart

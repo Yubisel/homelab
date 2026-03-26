@@ -1,0 +1,39 @@
+version: '3'
+
+tasks:
+  vikunja:
+    desc: Start all vikunja containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all vikunja containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show vikunja logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show vikunja container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest vikunja images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart vikunja containers
+    cmds:
+      - docker compose restart
+
+  setup:
+    desc: Initialize directories and start vikunja
+    cmds:
+      - sh init-dirs.sh
+      - task: vikunja

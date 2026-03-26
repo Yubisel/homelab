@@ -1,0 +1,39 @@
+version: '3'
+
+tasks:
+  komga:
+    desc: Start all komga containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all komga containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show komga logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show komga container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest komga images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart komga containers
+    cmds:
+      - docker compose restart
+
+  setup:
+    desc: Initialize directories and start komga
+    cmds:
+      - sh init-dirs.sh
+      - task: komga

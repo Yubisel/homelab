@@ -1,0 +1,164 @@
+version: '3'
+
+includes:
+  booklore:
+    taskfile: ./booklore
+    dir: ./booklore
+  immich:
+    taskfile: ./immich
+    dir: ./immich
+  vikunja:
+    taskfile: ./vikunja
+    dir: ./vikunja
+  hoppscotch:
+    taskfile: ./hoppscotch
+    dir: ./hoppscotch
+  bentopdf:
+    taskfile: ./bentopdf
+    dir: ./bentopdf
+  affine:
+    taskfile: ./affine
+    dir: ./affine
+  n8n:
+    taskfile: ./n8n
+    dir: ./n8n
+  whodb:
+    taskfile: ./whodb
+    dir: ./whodb
+  komga:
+    taskfile: ./komga
+    dir: ./komga
+  ollama:
+    taskfile: ./ollama
+    dir: ./ollama
+  it-tools:
+    taskfile: ./it-tools
+    dir: ./it-tools
+  linkding:
+    taskfile: ./linkding
+    dir: ./linkding
+
+tasks:
+  booklore:
+    desc: Start booklore containers
+    cmds:
+      - task: booklore:booklore
+
+  immich:
+    desc: Start immich containers
+    cmds:
+      - task: immich:immich
+
+  vikunja:
+    desc: Start vikunja containers
+    cmds:
+      - task: vikunja:vikunja
+
+  hoppscotch:
+    desc: Start hoppscotch containers
+    cmds:
+      - task: hoppscotch:hoppscotch
+
+  bentopdf:
+    desc: Start bentopdf containers
+    cmds:
+      - task: bentopdf:bentopdf
+
+  affine:
+    desc: Start affine containers
+    cmds:
+      - task: affine:affine
+
+  n8n:
+    desc: Start n8n containers
+    cmds:
+      - task: n8n:n8n
+
+  whodb:
+    desc: Start whodb containers
+    cmds:
+      - task: whodb:whodb
+
+  komga:
+    desc: Start komga containers
+    cmds:
+      - task: komga:komga
+
+  ollama:
+    desc: Start ollama containers
+    cmds:
+      - task: ollama:ollama
+
+  it-tools:
+    desc: Start it-tools containers
+    cmds:
+      - task: it-tools:it-tools
+
+  linkding:
+    desc: Start linkding containers
+    cmds:
+      - task: linkding:linkding
+
+  up:
+    desc: Start all app containers
+    cmds:
+      - task: booklore:up
+      - task: immich:up
+      - task: vikunja:up
+      - task: hoppscotch:up
+      - task: bentopdf:up
+      - task: affine:up
+      - task: n8n:up
+      - task: whodb:up
+      - task: komga:up
+      - task: ollama:up
+      - task: it-tools:up
+      - task: linkding:up
+
+  down:
+    desc: Stop all app containers
+    cmds:
+      - task: booklore:down
+      - task: immich:down
+      - task: vikunja:down
+      - task: hoppscotch:down
+      - task: bentopdf:down
+      - task: affine:down
+      - task: n8n:down
+      - task: whodb:down
+      - task: komga:down
+      - task: ollama:down
+      - task: it-tools:down
+      - task: linkding:down
+
+  ps:
+    desc: Show status of all app containers
+    cmds:
+      - task: booklore:ps
+      - task: immich:ps
+      - task: vikunja:ps
+      - task: hoppscotch:ps
+      - task: bentopdf:ps
+      - task: affine:ps
+      - task: n8n:ps
+      - task: whodb:ps
+      - task: komga:ps
+      - task: ollama:ps
+      - task: it-tools:ps
+      - task: linkding:ps
+
+  pull:
+    desc: Pull latest images for all app services
+    cmds:
+      - task: booklore:pull
+      - task: immich:pull
+      - task: vikunja:pull
+      - task: hoppscotch:pull
+      - task: bentopdf:pull
+      - task: affine:pull
+      - task: n8n:pull
+      - task: whodb:pull
+      - task: komga:pull
+      - task: ollama:pull
+      - task: it-tools:pull
+      - task: linkding:pull

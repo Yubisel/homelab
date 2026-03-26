@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  mysql:
+    desc: Start all mysql containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all mysql containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show mysql logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show mysql container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest mysql images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart mysql containers
+    cmds:
+      - docker compose restart

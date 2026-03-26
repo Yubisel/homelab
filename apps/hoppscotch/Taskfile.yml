@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  hoppscotch:
+    desc: Start all hoppscotch containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all hoppscotch containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show hoppscotch logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show hoppscotch container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest hoppscotch images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart hoppscotch containers
+    cmds:
+      - docker compose restart

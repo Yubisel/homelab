@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  affine:
+    desc: Start all affine containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all affine containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show affine logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show affine container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest affine images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart affine containers
+    cmds:
+      - docker compose restart

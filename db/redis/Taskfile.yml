@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  redis:
+    desc: Start all redis containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all redis containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show redis logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show redis container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest redis images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart redis containers
+    cmds:
+      - docker compose restart

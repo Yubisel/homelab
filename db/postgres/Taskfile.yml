@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  postgres:
+    desc: Start all postgres containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all postgres containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show postgres logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show postgres container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest postgres images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart postgres containers
+    cmds:
+      - docker compose restart

@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  bentopdf:
+    desc: Start all bentopdf containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all bentopdf containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show bentopdf logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show bentopdf container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest bentopdf images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart bentopdf containers
+    cmds:
+      - docker compose restart

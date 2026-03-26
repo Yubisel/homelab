@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  npm:
+    desc: Start all Nginx Proxy Manager containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all Nginx Proxy Manager containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show Nginx Proxy Manager logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show Nginx Proxy Manager container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest Nginx Proxy Manager images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart Nginx Proxy Manager containers
+    cmds:
+      - docker compose restart

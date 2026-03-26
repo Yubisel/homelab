@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  it-tools:
+    desc: Start all it-tools containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all it-tools containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show it-tools logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show it-tools container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest it-tools images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart it-tools containers
+    cmds:
+      - docker compose restart

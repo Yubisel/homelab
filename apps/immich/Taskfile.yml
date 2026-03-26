@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  immich:
+    desc: Start all immich containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all immich containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show immich logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show immich container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest immich images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart immich containers
+    cmds:
+      - docker compose restart

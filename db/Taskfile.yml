@@ -1,0 +1,68 @@
+version: '3'
+
+includes:
+  postgres:
+    taskfile: ./postgres
+    dir: ./postgres
+  redis:
+    taskfile: ./redis
+    dir: ./redis
+  mongodb:
+    taskfile: ./mongodb
+    dir: ./mongodb
+  mysql:
+    taskfile: ./mysql
+    dir: ./mysql
+
+tasks:
+  postgres:
+    desc: Start postgres containers
+    cmds:
+      - task: postgres:postgres
+
+  redis:
+    desc: Start redis containers
+    cmds:
+      - task: redis:redis
+
+  mongodb:
+    desc: Start mongodb containers
+    cmds:
+      - task: mongodb:mongodb
+
+  mysql:
+    desc: Start mysql containers
+    cmds:
+      - task: mysql:mysql
+
+  up:
+    desc: Start all database containers
+    cmds:
+      - task: postgres:up
+      - task: redis:up
+      - task: mongodb:up
+      - task: mysql:up
+
+  down:
+    desc: Stop all database containers
+    cmds:
+      - task: postgres:down
+      - task: redis:down
+      - task: mongodb:down
+      - task: mysql:down
+
+  ps:
+    desc: Show status of all database containers
+    cmds:
+      - task: postgres:ps
+      - task: redis:ps
+      - task: mongodb:ps
+      - task: mysql:ps
+
+  pull:
+    desc: Pull latest images for all database services
+    cmds:
+      - task: postgres:pull
+      - task: redis:pull
+      - task: mongodb:pull
+      - task: mysql:pull

@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  portainer:
+    desc: Start all portainer containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all portainer containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show portainer logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show portainer container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest portainer images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart portainer containers
+    cmds:
+      - docker compose restart

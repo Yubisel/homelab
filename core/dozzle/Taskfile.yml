@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  dozzle:
+    desc: Start all dozzle containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all dozzle containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show dozzle logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show dozzle container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest dozzle images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart dozzle containers
+    cmds:
+      - docker compose restart

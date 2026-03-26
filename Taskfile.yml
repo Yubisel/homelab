@@ -1,0 +1,46 @@
+version: '3'
+
+includes:
+  core:
+    taskfile: ./core
+    dir: ./core
+  db:
+    taskfile: ./db
+    dir: ./db
+  apps:
+    taskfile: ./apps
+    dir: ./apps
+
+tasks:
+  init:
+    desc: Start all homelab containers (core → db → apps)
+    cmds:
+      - task: core:up
+      - task: db:up
+      - task: apps:up
+
+  up:
+    desc: Alias for init
+    cmds:
+      - task: init
+
+  down:
+    desc: Stop all homelab containers
+    cmds:
+      - task: apps:down
+      - task: db:down
+      - task: core:down
+
+  ps:
+    desc: Show status of all containers
+    cmds:
+      - task: core:ps
+      - task: db:ps
+      - task: apps:ps
+
+  pull:
+    desc: Pull latest images for all services
+    cmds:
+      - task: core:pull
+      - task: db:pull
+      - task: apps:pull

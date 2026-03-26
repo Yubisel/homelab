@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  linkding:
+    desc: Start all linkding containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all linkding containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show linkding logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show linkding container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest linkding images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart linkding containers
+    cmds:
+      - docker compose restart
