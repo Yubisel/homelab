@@ -139,6 +139,12 @@
         description: Task and to-do manager
         server: homelab
         container: vikunja
+    - Wallos:
+        icon: walloswhite.webp
+        href: http://wallos.home
+        description: Subscription and recurring expense tracker
+        server: homelab
+        container: wallos
     - n8n:
         icon: n8n.png
         href: http://n8n.home

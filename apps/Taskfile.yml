@@ -34,9 +34,9 @@ includes:
   it-tools:
     taskfile: ./it-tools
     dir: ./it-tools
-  linkding:
-    taskfile: ./linkding
-    dir: ./linkding
+  wallos:
+    taskfile: ./wallos
+    dir: ./wallos
 
 tasks:
   booklore:
@@ -99,6 +99,11 @@ tasks:
     cmds:
       - task: linkding:linkding
 
+  wallos:
+    desc: Start wallos containers
+    cmds:
+      - task: wallos:wallos
+
   up:
     desc: Start all app containers
     cmds:
@@ -114,6 +119,7 @@ tasks:
       - task: ollama:up
       - task: it-tools:up
       - task: linkding:up
+      - task: wallos:up
 
   down:
     desc: Stop all app containers
@@ -130,6 +136,7 @@ tasks:
       - task: ollama:down
       - task: it-tools:down
       - task: linkding:down
+      - task: wallos:down
 
   ps:
     desc: Show status of all app containers
@@ -146,6 +153,7 @@ tasks:
       - task: ollama:ps
       - task: it-tools:ps
       - task: linkding:ps
+      - task: wallos:ps
 
   pull:
     desc: Pull latest images for all app services
@@ -162,3 +170,4 @@ tasks:
       - task: ollama:pull
       - task: it-tools:pull
       - task: linkding:pull
+      - task: wallos:pull

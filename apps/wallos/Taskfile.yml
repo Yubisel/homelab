@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  wallos:
+    desc: Start all wallos containers
+    aliases: [up]
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all wallos containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show wallos logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show wallos container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest wallos images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart wallos containers
+    cmds:
+      - docker compose restart
