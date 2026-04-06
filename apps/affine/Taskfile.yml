@@ -5,7 +5,7 @@ tasks:
     desc: Start all affine containers
     aliases: [up]
     cmds:
-      - docker compose up -d
+      - docker compose up -d affine
 
   down:
     desc: Stop all affine containers
