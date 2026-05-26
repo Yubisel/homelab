@@ -37,6 +37,9 @@ includes:
   linkding:
     taskfile: ./linkding
     dir: ./linkding
+  tududi:
+    taskfile: ./tududi
+    dir: ./tududi
 
 tasks:
   booklore:
@@ -99,6 +102,11 @@ tasks:
     cmds:
       - task: linkding:linkding
 
+  tududi:
+    desc: Start tududi containers
+    cmds:
+      - task: tududi:tududi
+
   up:
     desc: Start all enabled app containers
     cmds:
@@ -114,6 +122,7 @@ tasks:
       - '[ ! -f ollama/.enabled ] || task ollama:up'
       - '[ ! -f it-tools/.enabled ] || task it-tools:up'
       - '[ ! -f linkding/.enabled ] || task linkding:up'
+      - '[ ! -f tududi/.enabled ] || task tududi:up'
 
   down:
     desc: Stop all enabled app containers
@@ -130,6 +139,7 @@ tasks:
       - '[ ! -f ollama/.enabled ] || task ollama:down'
       - '[ ! -f it-tools/.enabled ] || task it-tools:down'
       - '[ ! -f linkding/.enabled ] || task linkding:down'
+      - '[ ! -f tududi/.enabled ] || task tududi:down'
 
   enable:
     desc: Enable an app service. Usage: task apps:enable -- immich
@@ -158,6 +168,7 @@ tasks:
       - task: ollama:ps
       - task: it-tools:ps
       - task: linkding:ps
+      - task: tududi:ps
 
   pull:
     desc: Pull latest images for all app services
@@ -174,3 +185,4 @@ tasks:
       - task: ollama:pull
       - task: it-tools:pull
       - task: linkding:pull
+      - task: tududi:pull
