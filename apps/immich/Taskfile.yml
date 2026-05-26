@@ -4,6 +4,9 @@ tasks:
   immich:
     desc: Start all immich containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "immich not enabled — run: task apps:enable -- immich"
     cmds:
       - docker compose up -d
 

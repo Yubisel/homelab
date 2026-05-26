@@ -40,7 +40,7 @@ If you prefer a single place that explicitly starts every stack after boot (usef
    sudo systemctl start homelab-boot.service
    ```
 
-After a reboot, `homelab-boot.service` runs once: it ensures the `proxy-net` network exists and starts each stack with `docker compose up -d`.
+After a reboot, `homelab-boot.service` runs once: it ensures the `proxy-net` network exists and starts each enabled stack (those with a `.enabled` file) with `docker compose up -d`.
 
 ## Summary
 

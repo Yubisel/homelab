@@ -4,6 +4,9 @@ tasks:
   dozzle:
     desc: Start all dozzle containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "dozzle not enabled — run: task core:enable -- dozzle"
     cmds:
       - docker compose up -d
 

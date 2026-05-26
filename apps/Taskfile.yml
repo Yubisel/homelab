@@ -100,36 +100,48 @@ tasks:
       - task: linkding:linkding
 
   up:
-    desc: Start all app containers
+    desc: Start all enabled app containers
     cmds:
-      - task: booklore:up
-      - task: immich:up
-      - task: vikunja:up
-      - task: hoppscotch:up
-      - task: bentopdf:up
-      - task: affine:up
-      - task: n8n:up
-      - task: whodb:up
-      - task: komga:up
-      - task: ollama:up
-      - task: it-tools:up
-      - task: linkding:up
+      - '[ ! -f booklore/.enabled ] || task booklore:up'
+      - '[ ! -f immich/.enabled ] || task immich:up'
+      - '[ ! -f vikunja/.enabled ] || task vikunja:up'
+      - '[ ! -f hoppscotch/.enabled ] || task hoppscotch:up'
+      - '[ ! -f bentopdf/.enabled ] || task bentopdf:up'
+      - '[ ! -f affine/.enabled ] || task affine:up'
+      - '[ ! -f n8n/.enabled ] || task n8n:up'
+      - '[ ! -f whodb/.enabled ] || task whodb:up'
+      - '[ ! -f komga/.enabled ] || task komga:up'
+      - '[ ! -f ollama/.enabled ] || task ollama:up'
+      - '[ ! -f it-tools/.enabled ] || task it-tools:up'
+      - '[ ! -f linkding/.enabled ] || task linkding:up'
 
   down:
-    desc: Stop all app containers
+    desc: Stop all enabled app containers
     cmds:
-      - task: booklore:down
-      - task: immich:down
-      - task: vikunja:down
-      - task: hoppscotch:down
-      - task: bentopdf:down
-      - task: affine:down
-      - task: n8n:down
-      - task: whodb:down
-      - task: komga:down
-      - task: ollama:down
-      - task: it-tools:down
-      - task: linkding:down
+      - '[ ! -f booklore/.enabled ] || task booklore:down'
+      - '[ ! -f immich/.enabled ] || task immich:down'
+      - '[ ! -f vikunja/.enabled ] || task vikunja:down'
+      - '[ ! -f hoppscotch/.enabled ] || task hoppscotch:down'
+      - '[ ! -f bentopdf/.enabled ] || task bentopdf:down'
+      - '[ ! -f affine/.enabled ] || task affine:down'
+      - '[ ! -f n8n/.enabled ] || task n8n:down'
+      - '[ ! -f whodb/.enabled ] || task whodb:down'
+      - '[ ! -f komga/.enabled ] || task komga:down'
+      - '[ ! -f ollama/.enabled ] || task ollama:down'
+      - '[ ! -f it-tools/.enabled ] || task it-tools:down'
+      - '[ ! -f linkding/.enabled ] || task linkding:down'
+
+  enable:
+    desc: Enable an app service. Usage: task apps:enable -- immich
+    cmds:
+      - touch {{.CLI_ARGS}}/.enabled
+      - echo "Enabled {{.CLI_ARGS}}"
+
+  disable:
+    desc: Disable an app service. Usage: task apps:disable -- immich
+    cmds:
+      - rm -f {{.CLI_ARGS}}/.enabled
+      - echo "Disabled {{.CLI_ARGS}}"
 
   ps:
     desc: Show status of all app containers

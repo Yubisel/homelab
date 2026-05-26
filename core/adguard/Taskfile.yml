@@ -4,6 +4,9 @@ tasks:
   adguard:
     desc: Start all adguard containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "adguard not enabled — run: task core:enable -- adguard"
     cmds:
       - docker compose up -d
 

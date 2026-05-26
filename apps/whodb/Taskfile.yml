@@ -4,6 +4,9 @@ tasks:
   whodb:
     desc: Start all whodb containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "whodb not enabled — run: task apps:enable -- whodb"
     cmds:
       - docker compose up -d
 

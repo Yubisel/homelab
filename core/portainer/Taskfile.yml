@@ -4,6 +4,9 @@ tasks:
   portainer:
     desc: Start all portainer containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "portainer not enabled — run: task core:enable -- portainer"
     cmds:
       - docker compose up -d
 

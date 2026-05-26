@@ -9,4 +9,13 @@ Database services for the homelab. All use the shared `proxy-net` network so oth
 | redis    | Redis 7                         | 6379    |
 | mongodb  | MongoDB 7.0                    | 27017   |
 
-**Usage:** From a stack folder (e.g. `db/postgres`), run `docker compose up -d`. Copy `.env.example` to `.env` and set credentials where required (e.g. Postgres).
+**Usage:** Enable the service first, then start it:
+```bash
+task db:enable -- postgres
+task db:postgres
+```
+Or from the service folder:
+```bash
+touch .enabled && task up
+```
+Copy `.env.example` to `.env` and set credentials where required (e.g. Postgres).

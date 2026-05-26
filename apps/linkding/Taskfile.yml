@@ -4,6 +4,9 @@ tasks:
   linkding:
     desc: Start all linkding containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "linkding not enabled — run: task apps:enable -- linkding"
     cmds:
       - docker compose up -d
 

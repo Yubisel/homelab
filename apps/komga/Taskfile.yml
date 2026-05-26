@@ -4,6 +4,9 @@ tasks:
   komga:
     desc: Start all komga containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "komga not enabled — run: task apps:enable -- komga"
     cmds:
       - docker compose up -d
 

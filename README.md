@@ -12,18 +12,48 @@ Docker-based homelab configuration: databases, core infrastructure, and self-hos
    ```
    Supports Ubuntu/Debian, Fedora/RHEL, Alpine, and macOS.
 
-2. **Start everything** from the repo root:
+2. **Enable the services you want** — services are disabled by default:
+   ```bash
+   task core:enable -- adguard
+   task db:enable -- postgres
+   task apps:enable -- immich
+   ```
+
+3. **Start enabled services** from the repo root:
    ```bash
    task init
    ```
 
-3. **Start a single service** from its directory:
+4. **Start a single service** from its directory (must be enabled first):
    ```bash
    cd db/postgres
    task postgres
    ```
 
-4. **Start on reboot** — see [BOOT.md](BOOT.md) to enable Docker and/or the homelab boot service.
+5. **Start on reboot** — see [BOOT.md](BOOT.md) to enable Docker and/or the homelab boot service.
+
+## Enabling and disabling services
+
+Services are **disabled by default**. A service only starts (via `task up` or `task init`) when it has a `.enabled` marker file in its directory.
+
+Enable or disable from the repo root:
+
+```bash
+task core:enable -- adguard      # enable a core service
+task db:enable -- postgres       # enable a database
+task apps:enable -- immich       # enable an app
+
+task apps:disable -- immich      # disable a service
+```
+
+Or manually:
+
+```bash
+touch apps/immich/.enabled       # enable
+rm apps/immich/.enabled          # disable
+```
+
+> Add `**/.enabled` to `.gitignore` to keep your local activation state out of version control.
 
 ## Task commands
 
@@ -32,7 +62,7 @@ Commands follow the same pattern at every level of the hierarchy.
 ### From a service directory
 
 ```bash
-task <service>   # start containers (e.g. task postgres)
+task <service>   # start containers (e.g. task postgres) — requires .enabled
 task up          # alias for the above
 task down        # stop containers
 task logs        # follow logs (task logs -- <service> to filter)
@@ -45,22 +75,25 @@ task setup       # init dirs + start (booklore, vikunja, komga only)
 ### From a category directory (`core/`, `db/`, `apps/`)
 
 ```bash
-task postgres          # start a specific service
-task up                # start all services in this category
-task down              # stop all services in this category
-task ps                # status of all services
-task postgres:logs     # scoped commands via namespace
+task core:enable -- <service>    # enable a service
+task core:disable -- <service>   # disable a service
+task postgres                    # start a specific service (if enabled)
+task up                          # start all enabled services in this category
+task down                        # stop all enabled services in this category
+task ps                          # status of all services
+task postgres:logs               # scoped commands via namespace
 ```
 
 ### From the repo root
 
 ```bash
-task init              # start everything: core → db → apps
-task down              # stop everything (reverse order)
+task init              # start all enabled services: core → db → apps
+task down              # stop all enabled services (reverse order)
 task ps                # status of all containers
 task pull              # pull all images
 task db:postgres       # start a specific service
 task apps:immich:logs  # scoped to any depth
+task core:enable -- adguard      # enable/disable from root
 ```
 
 ## Services
@@ -123,4 +156,4 @@ homelab/
 └── systemd/             # Systemd unit to start all stacks on boot
 ```
 
-Each service lives in its own subfolder with a `docker-compose.yml`, an optional `.env` file, and a `Taskfile.yml`. Stacks are independent — start only what you need.
+Each service lives in its own subfolder with a `docker-compose.yml`, an optional `.env` file, and a `Taskfile.yml`. Stacks are independent — enable and start only what you need.

@@ -4,6 +4,9 @@ tasks:
   ollama:
     desc: Start all ollama containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "ollama not enabled — run: task apps:enable -- ollama"
     cmds:
       - docker compose up -d
 

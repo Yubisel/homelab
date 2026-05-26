@@ -36,20 +36,32 @@ tasks:
       - task: mysql:mysql
 
   up:
-    desc: Start all database containers
+    desc: Start all enabled database containers
     cmds:
-      - task: postgres:up
-      - task: redis:up
-      - task: mongodb:up
-      - task: mysql:up
+      - '[ ! -f postgres/.enabled ] || task postgres:up'
+      - '[ ! -f redis/.enabled ] || task redis:up'
+      - '[ ! -f mongodb/.enabled ] || task mongodb:up'
+      - '[ ! -f mysql/.enabled ] || task mysql:up'
 
   down:
-    desc: Stop all database containers
+    desc: Stop all enabled database containers
     cmds:
-      - task: postgres:down
-      - task: redis:down
-      - task: mongodb:down
-      - task: mysql:down
+      - '[ ! -f postgres/.enabled ] || task postgres:down'
+      - '[ ! -f redis/.enabled ] || task redis:down'
+      - '[ ! -f mongodb/.enabled ] || task mongodb:down'
+      - '[ ! -f mysql/.enabled ] || task mysql:down'
+
+  enable:
+    desc: Enable a database service. Usage: task db:enable -- postgres
+    cmds:
+      - touch {{.CLI_ARGS}}/.enabled
+      - echo "Enabled {{.CLI_ARGS}}"
+
+  disable:
+    desc: Disable a database service. Usage: task db:disable -- postgres
+    cmds:
+      - rm -f {{.CLI_ARGS}}/.enabled
+      - echo "Disabled {{.CLI_ARGS}}"
 
   ps:
     desc: Show status of all database containers

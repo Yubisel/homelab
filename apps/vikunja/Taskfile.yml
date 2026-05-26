@@ -4,6 +4,9 @@ tasks:
   vikunja:
     desc: Start all vikunja containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "vikunja not enabled — run: task apps:enable -- vikunja"
     cmds:
       - docker compose up -d
 

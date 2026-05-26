@@ -4,6 +4,9 @@ tasks:
   postgres:
     desc: Start all postgres containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "postgres not enabled — run: task db:enable -- postgres"
     cmds:
       - docker compose up -d
 

@@ -4,6 +4,9 @@ tasks:
   redis:
     desc: Start all redis containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "redis not enabled — run: task db:enable -- redis"
     cmds:
       - docker compose up -d
 

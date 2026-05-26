@@ -4,6 +4,9 @@ tasks:
   dockge:
     desc: Start all dockge containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "dockge not enabled — run: task core:enable -- dockge"
     cmds:
       - docker compose up -d
 

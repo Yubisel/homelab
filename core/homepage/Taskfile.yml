@@ -4,6 +4,9 @@ tasks:
   homepage:
     desc: Start all homepage containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "homepage not enabled — run: task core:enable -- homepage"
     cmds:
       - docker compose up -d
 

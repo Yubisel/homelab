@@ -4,6 +4,9 @@ tasks:
   mysql:
     desc: Start all mysql containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "mysql not enabled — run: task db:enable -- mysql"
     cmds:
       - docker compose up -d
 

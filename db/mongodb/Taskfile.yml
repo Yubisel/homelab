@@ -4,6 +4,9 @@ tasks:
   mongodb:
     desc: Start all mongodb containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "mongodb not enabled — run: task db:enable -- mongodb"
     cmds:
       - docker compose up -d
 

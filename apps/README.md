@@ -8,6 +8,13 @@ Self-hosted apps that run on `proxy-net` and can be exposed via Nginx Proxy Mana
 | booklore | Booklore — book library manager | 6060    |
 | komga    | Komga — comic/manga server     | 25600     |
 
-**Usage:** From a stack folder (e.g. `apps/linkding`), copy `.env.sample` to `.env`, set variables if needed, then run `docker compose up -d`.
-**Usage:** From a stack folder (e.g. `apps/booklore`), copy `.env.sample` to `.env`, set variables if needed, then run `docker compose up -d`.
-**Usage:** From a stack folder (e.g. `apps/komga`), copy `.env.sample` to `.env`, set variables if needed, run `init-dirs.sh` if the stack has one, then run `docker compose up -d`.
+**Usage:** Enable the service first, then start it:
+```bash
+task apps:enable -- immich
+task apps:immich
+```
+Or from the service folder:
+```bash
+touch .enabled && task up
+```
+Copy `.env.sample` to `.env` and set variables if needed. For booklore, vikunja, and komga run `task setup` instead of `task up` on first start (creates required directories).

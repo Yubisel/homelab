@@ -9,4 +9,13 @@ Core homelab services: reverse proxy, DNS/ad-blocking, and Docker management UIs
 | adguard  | AdGuard Home — DNS & ad-blocking      | 53, 3000, 8080, 445 |
 | dockge   | Dockge — Compose stack manager       | 5001                 |
 
-**Usage:** Start stacks from each folder with `docker compose up -d`. For Dockge, set `DOCKGE_STACKS_DIR` (and the bind mount) to your homelab repo path so it can manage the other stacks.
+**Usage:** Enable the service first, then start it:
+```bash
+task core:enable -- adguard
+task core:adguard
+```
+Or from the service folder:
+```bash
+touch .enabled && task up
+```
+For Dockge, set `DOCKGE_STACKS_DIR` (and the bind mount) to your homelab repo path so it can manage the other stacks.

@@ -4,6 +4,9 @@ tasks:
   npm:
     desc: Start all Nginx Proxy Manager containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "npm not enabled — run: task core:enable -- npm"
     cmds:
       - docker compose up -d
 

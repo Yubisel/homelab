@@ -4,6 +4,9 @@ tasks:
   hoppscotch:
     desc: Start all hoppscotch containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "hoppscotch not enabled — run: task apps:enable -- hoppscotch"
     cmds:
       - docker compose up -d
 

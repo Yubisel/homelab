@@ -4,6 +4,9 @@ tasks:
   it-tools:
     desc: Start all it-tools containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "it-tools not enabled — run: task apps:enable -- it-tools"
     cmds:
       - docker compose up -d
 

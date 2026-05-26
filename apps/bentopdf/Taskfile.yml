@@ -4,6 +4,9 @@ tasks:
   bentopdf:
     desc: Start all bentopdf containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "bentopdf not enabled — run: task apps:enable -- bentopdf"
     cmds:
       - docker compose up -d
 

@@ -4,6 +4,9 @@ tasks:
   portracker:
     desc: Start all portracker containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "portracker not enabled — run: task core:enable -- portracker"
     cmds:
       - docker compose up -d
 

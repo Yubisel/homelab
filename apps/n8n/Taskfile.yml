@@ -4,6 +4,9 @@ tasks:
   n8n:
     desc: Start all n8n containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "n8n not enabled — run: task apps:enable -- n8n"
     cmds:
       - docker compose up -d
 

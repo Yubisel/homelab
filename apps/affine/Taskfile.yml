@@ -4,6 +4,9 @@ tasks:
   affine:
     desc: Start all affine containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "affine not enabled — run: task apps:enable -- affine"
     cmds:
       - docker compose up -d
 

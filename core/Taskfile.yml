@@ -60,26 +60,38 @@ tasks:
       - task: dozzle:dozzle
 
   up:
-    desc: Start all core containers
+    desc: Start all enabled core containers
     cmds:
-      - task: adguard:up
-      - task: npm:up
-      - task: portainer:up
-      - task: dockge:up
-      - task: portracker:up
-      - task: dozzle:up
-      - task: homepage:up
+      - '[ ! -f adguard/.enabled ] || task adguard:up'
+      - '[ ! -f npm/.enabled ] || task npm:up'
+      - '[ ! -f portainer/.enabled ] || task portainer:up'
+      - '[ ! -f dockge/.enabled ] || task dockge:up'
+      - '[ ! -f portracker/.enabled ] || task portracker:up'
+      - '[ ! -f dozzle/.enabled ] || task dozzle:up'
+      - '[ ! -f homepage/.enabled ] || task homepage:up'
 
   down:
-    desc: Stop all core containers
+    desc: Stop all enabled core containers
     cmds:
-      - task: homepage:down
-      - task: adguard:down
-      - task: portainer:down
-      - task: dockge:down
-      - task: portracker:down
-      - task: npm:down
-      - task: dozzle:down
+      - '[ ! -f homepage/.enabled ] || task homepage:down'
+      - '[ ! -f adguard/.enabled ] || task adguard:down'
+      - '[ ! -f portainer/.enabled ] || task portainer:down'
+      - '[ ! -f dockge/.enabled ] || task dockge:down'
+      - '[ ! -f portracker/.enabled ] || task portracker:down'
+      - '[ ! -f npm/.enabled ] || task npm:down'
+      - '[ ! -f dozzle/.enabled ] || task dozzle:down'
+
+  enable:
+    desc: Enable a core service. Usage: task core:enable -- adguard
+    cmds:
+      - touch {{.CLI_ARGS}}/.enabled
+      - echo "Enabled {{.CLI_ARGS}}"
+
+  disable:
+    desc: Disable a core service. Usage: task core:disable -- adguard
+    cmds:
+      - rm -f {{.CLI_ARGS}}/.enabled
+      - echo "Disabled {{.CLI_ARGS}}"
 
   ps:
     desc: Show status of all core containers

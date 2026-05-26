@@ -4,6 +4,9 @@ tasks:
   booklore:
     desc: Start all booklore containers
     aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "booklore not enabled — run: task apps:enable -- booklore"
     cmds:
       - docker compose up -d
 
