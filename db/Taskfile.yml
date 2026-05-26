@@ -52,13 +52,13 @@ tasks:
       - '[ ! -f mysql/.enabled ] || task mysql:down'
 
   enable:
-    desc: Enable a database service. Usage: task db:enable -- postgres
+    desc: 'Enable a database service. Usage: task db:enable -- postgres'
     cmds:
       - touch {{.CLI_ARGS}}/.enabled
       - echo "Enabled {{.CLI_ARGS}}"
 
   disable:
-    desc: Disable a database service. Usage: task db:disable -- postgres
+    desc: 'Disable a database service. Usage: task db:disable -- postgres'
     cmds:
       - rm -f {{.CLI_ARGS}}/.enabled
       - echo "Disabled {{.CLI_ARGS}}"
