@@ -82,13 +82,13 @@ tasks:
       - '[ ! -f dozzle/.enabled ] || task dozzle:down'
 
   enable:
-    desc: Enable a core service. Usage: task core:enable -- adguard
+    desc: 'Enable a core service. Usage: task core:enable -- adguard'
     cmds:
       - touch {{.CLI_ARGS}}/.enabled
       - echo "Enabled {{.CLI_ARGS}}"
 
   disable:
-    desc: Disable a core service. Usage: task core:disable -- adguard
+    desc: 'Disable a core service. Usage: task core:disable -- adguard'
     cmds:
       - rm -f {{.CLI_ARGS}}/.enabled
       - echo "Disabled {{.CLI_ARGS}}"
