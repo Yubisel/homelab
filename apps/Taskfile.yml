@@ -110,6 +110,11 @@ tasks:
     cmds:
       - task: tududi:tududi
 
+  wallos:
+    desc: Start wallos containers
+    cmds:
+      - task: wallos:wallos
+
   up:
     desc: Start all enabled app containers
     cmds:
@@ -147,13 +152,13 @@ tasks:
       - '[ ! -f tududi/.enabled ] || task tududi:down'
 
   enable:
-    desc: Enable an app service. Usage: task apps:enable -- immich
+    desc: "Enable an app service. Usage: task apps:enable -- immich"
     cmds:
       - touch {{.CLI_ARGS}}/.enabled
       - echo "Enabled {{.CLI_ARGS}}"
 
   disable:
-    desc: Disable an app service. Usage: task apps:disable -- immich
+    desc: "Disable an app service. Usage: task apps:disable -- immich"
     cmds:
       - rm -f {{.CLI_ARGS}}/.enabled
       - echo "Disabled {{.CLI_ARGS}}"
