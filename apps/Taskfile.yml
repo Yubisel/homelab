@@ -40,6 +40,9 @@ includes:
   tududi:
     taskfile: ./tududi
     dir: ./tududi
+  wallos:
+    taskfile: ./wallos
+    dir: ./wallos
 
 tasks:
   booklore:
@@ -122,6 +125,7 @@ tasks:
       - '[ ! -f ollama/.enabled ] || task ollama:up'
       - '[ ! -f it-tools/.enabled ] || task it-tools:up'
       - '[ ! -f linkding/.enabled ] || task linkding:up'
+      - '[ ! -f wallos/.enabled ] || task wallos:up'
       - '[ ! -f tududi/.enabled ] || task tududi:up'
 
   down:
@@ -139,6 +143,7 @@ tasks:
       - '[ ! -f ollama/.enabled ] || task ollama:down'
       - '[ ! -f it-tools/.enabled ] || task it-tools:down'
       - '[ ! -f linkding/.enabled ] || task linkding:down'
+      - '[ ! -f wallos/.enabled ] || task wallos:down'
       - '[ ! -f tududi/.enabled ] || task tududi:down'
 
   enable:
@@ -169,6 +174,7 @@ tasks:
       - task: it-tools:ps
       - task: linkding:ps
       - task: tududi:ps
+      - task: wallos:ps
 
   pull:
     desc: Pull latest images for all app services
@@ -186,3 +192,4 @@ tasks:
       - task: it-tools:pull
       - task: linkding:pull
       - task: tududi:pull
+      - task: wallos:pull
