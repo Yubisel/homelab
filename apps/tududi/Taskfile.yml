@@ -1,0 +1,36 @@
+version: '3'
+
+tasks:
+  tududi:
+    desc: Start all tududi containers
+    aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "tududi not enabled — run: task apps:enable -- tududi"
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all tududi containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show tududi logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show tududi container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest tududi images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart tududi containers
+    cmds:
+      - docker compose restart
