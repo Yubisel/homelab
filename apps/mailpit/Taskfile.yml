@@ -1,0 +1,36 @@
+version: '3'
+
+tasks:
+  mailpit:
+    desc: Start all mailpit containers
+    aliases: [up]
+    preconditions:
+      - sh: test -f .enabled
+        msg: "mailpit not enabled — run: task apps:enable -- mailpit"
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop all mailpit containers
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Show mailpit logs
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+
+  ps:
+    desc: Show mailpit container status
+    cmds:
+      - docker compose ps
+
+  pull:
+    desc: Pull latest mailpit images
+    cmds:
+      - docker compose pull
+
+  restart:
+    desc: Restart mailpit containers
+    cmds:
+      - docker compose restart

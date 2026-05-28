@@ -43,6 +43,9 @@ includes:
   wallos:
     taskfile: ./wallos
     dir: ./wallos
+  mailpit:
+    taskfile: ./mailpit
+    dir: ./mailpit
 
 tasks:
   booklore:
@@ -115,6 +118,11 @@ tasks:
     cmds:
       - task: wallos:wallos
 
+  mailpit:
+    desc: Start mailpit containers
+    cmds:
+      - task: mailpit:mailpit
+
   up:
     desc: Start all enabled app containers
     cmds:
@@ -132,6 +140,7 @@ tasks:
       - '[ ! -f linkding/.enabled ] || task linkding:up'
       - '[ ! -f wallos/.enabled ] || task wallos:up'
       - '[ ! -f tududi/.enabled ] || task tududi:up'
+      - '[ ! -f mailpit/.enabled ] || task mailpit:up'
 
   down:
     desc: Stop all enabled app containers
@@ -150,6 +159,7 @@ tasks:
       - '[ ! -f linkding/.enabled ] || task linkding:down'
       - '[ ! -f wallos/.enabled ] || task wallos:down'
       - '[ ! -f tududi/.enabled ] || task tududi:down'
+      - '[ ! -f mailpit/.enabled ] || task mailpit:down'
 
   enable:
     desc: "Enable an app service. Usage: task apps:enable -- immich"
@@ -180,6 +190,7 @@ tasks:
       - task: linkding:ps
       - task: tududi:ps
       - task: wallos:ps
+      - task: mailpit:ps
 
   pull:
     desc: Pull latest images for all app services
@@ -198,3 +209,4 @@ tasks:
       - task: linkding:pull
       - task: tududi:pull
       - task: wallos:pull
+      - task: mailpit:pull
